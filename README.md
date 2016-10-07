@@ -8,8 +8,14 @@
 ffmpeg -s 4096x2048 -i Hangpai_2.yuv -r 30 image2 Hangpai_2_req_%d.png
 ```
 
-* 然后用matlab对每张图片进行空间上的切片
+* 然后用 **videoSegmentation.py** 对每张图片进行空间上的8x8切片
 
 * 最后用ffmpeg把图片拼成视频。
 
-未完待续...
+	命令：
+	
+	```
+	ffmpeg -r 30 -i Hangpai_2_req_seg_seg_1_%d.png -c:v libx264 -y out.mp4
+	```
+
+结果...未完待续...
