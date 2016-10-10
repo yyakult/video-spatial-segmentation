@@ -16,7 +16,7 @@ SEGMENT_H = H / NUM_H
 
 # Output Parameters
 FLODER_NAME = "seg_"
-OUTPUT_PICTURES_PREFIX = PICTURES_PREFIX+"seg_"
+OUTPUT_PICTURES_PREFIX = PICTURES_PREFIX
 OUTPUT_PICTURES_FORMAT = ".png"
 
 for i in range(1,NUM_W*NUM_H+1):
@@ -32,6 +32,7 @@ for n in range(1,PICTURES_NUM+1):
 			img_seg = img[SEGMENT_H*(i-1):SEGMENT_H*(i), SEGMENT_W*(j-1):SEGMENT_W*(j)]
 			folder = FLODER_NAME + str((i-1)*NUM_H+j)
 			cv2.imwrite(folder+"/"+OUTPUT_PICTURES_PREFIX+str(folder)+"_"+str(n)+OUTPUT_PICTURES_FORMAT, img_seg)
+
 
 
 	
